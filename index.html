@@ -23,13 +23,25 @@
         a:hover {
             text-decoration: underline;
         }
+        .link-container {
+            display: flex;
+            align-items: center;
+        }
+        .link-icon {
+            font-size: 20px; /* Adjust the size of the icon */
+            margin-right: 10px; /* Add spacing between the icon and link text */
+            background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png) center center no-repeat; /* Specify the icon's URL and position */
+            display: inline-block;
+            width: 20px; /* Set the width of the icon */
+            height: 20px; /* Set the height of the icon */
+        }
     </style>
 </head>
 <body>
     <h1>Welcome to jankovic.tech</h1>
     <p>Links:</p>
-    <p>Instagram: <a href="https://www.instagram.com/milan.sag" target="_blank">@milan.sag</a></p>
-    <p>GitHub: <a href="https://www.github.com/bettercallmilan" target="_blank">@bettercallmilan</a></p>
-    <p>Matrix: <a href="https://matrix.to/#/@mentalfox:envs.net" target="_blank">@mentalfox:envs.net</a></p>
+    <p class="link-container">Instagram: <span class="link-icon"></span><a href="https://www.instagram.com/milan.sag" target="_blank">@milan.sag</a></p>
+    <p>GitHub: <span class="link-icon"></span><a href="https://www.github.com/bettercallmilan" target="_blank">@bettercallmilan</a></p>
+    <p>Matrix: <span class="link-icon"></span><a href="https://matrix.to/#/@mentalfox:envs.net" target="_blank">@mentalfox:envs.net</a></p>
 </body>
 </html>
