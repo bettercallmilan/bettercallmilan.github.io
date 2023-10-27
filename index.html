@@ -1,71 +1,88 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>jankovic.tech</title>
     <style>
-        /* Common styles for both dark and light modes */
         body {
+            background-color: #000;
+            color: #FFF;
             font-family: Calibri, sans-serif;
             text-align: center;
             padding: 20px;
-            transition: background-color 0.5s, color 0.5s; /* Add a smooth transition effect */
         }
+
+        .dark-mode {
+            background-color: #000;
+            color: #FFF;
+        }
+
         h1 {
             font-size: 36px;
         }
+
         p {
             font-size: 18px;
         }
+
         a {
+            color: #FFF;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
         .link-container {
             display: flex;
             align-items: center;
-            justify-content: center; /* Center-align the content */
         }
+
         .link-icon {
             width: 20px;
             height: 20px;
             margin-right: 10px;
         }
-        /* Light mode styles */
-        body.light-mode {
-            background-color: #FFF;
-            color: #000; /* Text color for light mode */
-        }
-        /* Dark mode styles */
-        body.dark-mode {
-            background-color: #000;
-            color: #FFF; /* Text color for dark mode */
-        }
     </style>
 </head>
+
 <body class="dark-mode">
+    <button id="modeToggle">Toggle Light Mode</button>
+
     <h1>Welcome to jankovic.tech</h1>
     <p>Links:</p>
     <p class="link-container">
-        <img class="link-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" alt="Instagram Icon">
-        Instagram: <a href="https://www.instagram.com/milan.sag" target="_blank">@milan.sag</a>
+        <img class="link-icon"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png"
+            alt="Instagram Icon"> Instagram:&nbsp;<a href="https://www.instagram.com/milan.sag" target="_blank">@milan.sag</a>
     </p>
     <p class="link-container">
-        <img class="link-icon" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Icon">
-        GitHub: <a href="https://www.github.com/bettercallmilan" target="_blank">@bettercallmilan</a>
+        <img class="link-icon"
+            src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+            alt="GitHub Icon"> GitHub:&nbsp;<a href="https://www.github.com/bettercallmilan" target="_blank">@bettercallmilan</a>
     </p>
-    <p class "link-container">
-        <img class="link-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Element_%28software%29_logo.svg/1200px-Element_%28software%29_logo.svg.png" alt="Matrix Icon">
-        Matrix: <a href="https://matrix.to/#/@mentalfox:envs.net" target="_blank">@mentalfox:envs.net</a>
+    <p class="link-container">
+        <img class="link-icon"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Element_%28software%29_logo.svg/1200px-Element_%28software%29_logo.svg.png"
+            alt="Matrix Icon"> Matrix:&nbsp;<a href="https://matrix.to/#/@mentalfox:envs.net" target="_blank">@mentalfox:envs.net</a>
     </p>
-    <button onclick="toggleLightMode()">Toggle Light Mode</button>
 
     <script>
-        function toggleLightMode() {
-            const body = document.body;
-            body.classList.toggle('light-mode');
-        }
+        // JavaScript function to toggle light mode
+        const body = document.body;
+        const button = document.getElementById("modeToggle");
+
+        button.addEventListener("click", function () {
+            if (body.classList.contains("dark-mode")) {
+                body.classList.remove("dark-mode");
+                button.innerText = "Toggle Light Mode";
+            } else {
+                body.classList.add("dark-mode");
+                button.innerText = "Toggle Dark Mode";
+            }
+        });
     </script>
 </body>
+
 </html>
