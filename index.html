@@ -10,17 +10,6 @@
             font-family: Calibri, sans-serif;
             text-align: center;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .dark-mode {
-            background-color: #000;
-            color: #FFF;
         }
 
         h1 {
@@ -50,12 +39,24 @@
             height: 20px;
             margin-right: 10px;
         }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 
-<body class="dark-mode">
-    <button id="modeToggle">Toggle Light Mode</button>
-
+<body>
     <h1>Welcome to jankovic.tech</h1>
     <p>Links:</p>
     <p class="link-container">
@@ -73,22 +74,6 @@
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Element_%28software%29_logo.svg/1200px-Element_%28software%29_logo.svg.png"
             alt="Matrix Icon"> Matrix: <a href="https://matrix.to/#/@mentalfox:envs.net" target="_blank">@mentalfox:envs.net</a>
     </p>
-
-    <script>
-        // JavaScript function to toggle light mode
-        const body = document.body;
-        const button = document.getElementById("modeToggle");
-
-        button.addEventListener("click", function () {
-            if (body.classList.contains("dark-mode")) {
-                body.classList.remove("dark-mode");
-                button.innerText = "Toggle Light Mode";
-            } else {
-                body.classList.add("dark-mode");
-                button.innerText = "Toggle Dark Mode";
-            }
-        });
-    </script>
 </body>
 
 </html>
