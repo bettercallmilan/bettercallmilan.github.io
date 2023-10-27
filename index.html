@@ -3,13 +3,11 @@
 <head>
     <title>jankovic.tech</title>
     <style>
-        /* Common styles for both dark and light modes */
         body {
-            color: #FFF;
             font-family: Calibri, sans-serif;
             text-align: center;
             padding: 20px;
-            transition: background-color 0.5s, color 0.5s; /* Add a smooth transition effect */
+            transition: background-color 0.5s, color 0.5s;
         }
         h1 {
             font-size: 36px;
@@ -18,7 +16,6 @@
             font-size: 18px;
         }
         a {
-            color: #FFF;
             text-decoration: none;
         }
         a:hover {
@@ -33,13 +30,17 @@
             height: 20px;
             margin-right: 10px;
         }
-        /* Dark mode styles */
-        .dark-mode {
+        body.light-mode {
+            background-color: #FFF;
+            color: #000;
+        }
+        body.dark-mode {
             background-color: #000;
+            color: #FFF;
         }
     </style>
 </head>
-<body>
+<body class="light-mode">
     <h1>Welcome to jankovic.tech</h1>
     <p>Links:</p>
     <p class="link-container">
@@ -50,14 +51,13 @@
         <img class="link-icon" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Icon">
         GitHub:&nbsp;<a href="https://www.github.com/bettercallmilan" target="_blank">@bettercallmilan</a>
     </p>
-    <p class="link-container">
+    <p class "link-container">
         <img class="link-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Element_%28software%29_logo.svg/1200px-Element_%28software%29_logo.svg.png" alt="Matrix Icon">
         Matrix:&nbsp;<a href="https://matrix.to/#/@mentalfox:envs.net" target="_blank">@mentalfox:envs.net</a>
     </p>
     <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
 
     <script>
-        // JavaScript function to toggle dark mode
         function toggleDarkMode() {
             const body = document.body;
             body.classList.toggle('dark-mode');
