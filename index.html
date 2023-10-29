@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>jankovic.tech</title>
     <style>
@@ -35,13 +34,23 @@
         .link-container {
             display: flex;
             align-items: center;
-            justify-content: center; /* Center-align the links */
+            justify-content: center;
         }
 
         .link-icon {
             width: 20px;
             height: 20px;
             margin-right: 10px;
+        }
+
+        .contact-link {
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -70,6 +79,7 @@
             alt="Instagram Icon"> Instagram:&nbsp;<a href="https://www.instagram.com/milan.sag" target="_blank">@milan.sag</a>
     </p>
     <p class="link-container">
+        <img class "link-icon"
         <img class="link-icon"
             src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
             alt="GitHub Icon"> GitHub:&nbsp;<a href="https://www.github.com/bettercallmilan" target="_blank">@bettercallmilan</a>
@@ -79,7 +89,6 @@
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Element_%28software%29_logo.svg/1200px-Element_%28software%29_logo.svg.png"
             alt="Matrix Icon"> Matrix:&nbsp;<a href="https://matrix.to/#/@mentalfox:envs.net" target="_blank">@mentalfox:envs.net</a>
     </p>
-    <p class="contact-link" onclick="location.href='mailto:contact@jankovic.tech';">Contact</p>
+    <p class="contact-link" onclick="location.href='mailto:contact@jankovic.tech';">Contact us: contact@jankovic.tech</p>
 </body>
-
 </html>
