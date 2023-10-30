@@ -85,5 +85,23 @@
             src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
             alt="Email Icon"> Email:&nbsp;<a href="mailto:contact@jankovic.tech" target="_blank">contact@jankovic.tech</a>
     </p>
+    <button id="changeBackgroundButton">Change Background</button>
+
+    <script>
+        const backgrounds = [
+            "https://github.com/bettercallmilan/bettercallmilan.github.io/blob/main/docs/assets/2825826.gif?raw=true",
+            "https://github.com/bettercallmilan/bettercallmilan.github.io/blob/main/docs/assets/wallpaper.jpg?raw=true"
+        ];
+
+        let currentBackground = 0;
+
+        const changeBackgroundButton = document.getElementById("changeBackgroundButton");
+        const body = document.body;
+
+        changeBackgroundButton.addEventListener("click", () => {
+            currentBackground = (currentBackground + 1) % backgrounds.length;
+            body.style.backgroundImage = `url("${backgrounds[currentBackground]}")`;
+        });
+    </script>
 </body>
 </html>
