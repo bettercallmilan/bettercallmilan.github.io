@@ -4,7 +4,7 @@
     <title>jankovic.tech</title>
     <style>
         body {
-            background-image: url("https://github.com/bettercallmilan/bettercallmilan.github.io/blob/main/docs/assets/2825826.gif?raw=true");
+            background-image: url("https://github.com/bettercallmilan/bettercallmilan.github.io/blob/main/docs/assets/wallpaper.jpg?raw=true");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -43,6 +43,17 @@
             width: 20px;
             height: 20px;
             margin-right: 10px;
+        }
+        
+        #changeBackgroundButton {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: transparent;
+            color: #FFF;
+            border: 1px solid #FFF;
+            padding: 10px 20px;
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
@@ -85,6 +96,7 @@
             src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
             alt="Email Icon"> Email:&nbsp;<a href="mailto:contact@jankovic.tech" target="_blank">contact@jankovic.tech</a>
     </p>
+    
     <button id="changeBackgroundButton">Change Background</button>
 
     <script>
@@ -97,6 +109,13 @@
 
         const changeBackgroundButton = document.getElementById("changeBackgroundButton");
         const body = document.body;
+
+        const imageCache = [];
+        backgrounds.forEach((url) => {
+            const img = new Image();
+            img.src = url;
+            imageCache.push(img);
+        });
 
         changeBackgroundButton.addEventListener("click", () => {
             currentBackground = (currentBackground + 1) % backgrounds.length;
