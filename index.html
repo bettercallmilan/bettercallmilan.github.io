@@ -108,6 +108,9 @@
     
     <button id="changeBackgroundButton">Change Background</button>
 
+    <button id="randomAgentButton">Pick Random VALORANT Agent</button>
+    <p id="randomAgentResult"></p>
+    
     <script>
         const backgrounds = [
             "https://github.com/bettercallmilan/bettercallmilan.github.io/blob/main/docs/assets/wallpaper.jpg?raw=true",
@@ -131,5 +134,46 @@
             body.style.backgroundImage = `url("${backgrounds[currentBackground]}")`;
         });
     </script>
+
+    <script>
+    // List of Valorant agents
+    const agents = [
+      "Phoenix",
+      "Raze",
+      "Jett",
+      "Yoru",
+      "Neon",
+      "Reyna",
+      "Sage",
+      "Cypher",
+      "Chamber",
+      "Killjoy",
+      "Omen",
+      "Viper",
+      "Brimstone",
+      "Astra",
+      "Harbor",
+      "Sova",
+      "Breach",
+      "Skye",
+      "KAY/O",
+      "Fade",
+      "Deadlock",
+      "Gekko",
+    ];
+  
+    // Function to pick a random agent
+    function pickRandomAgent() {
+      const randomIndex = Math.floor(Math.random() * agents.length);
+      return agents[randomIndex];
+    }
+  
+    // Event listener for the button
+    document.getElementById("randomAgentButton").addEventListener("click", function () {
+      const randomAgent = pickRandomAgent();
+      document.getElementById("randomAgentResult").textContent = `Random Agent: ${randomAgent}`;
+    });
+    </script>
+  
 </body>
 </html>
