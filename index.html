@@ -74,14 +74,20 @@
             cursor: pointer;
         }
 
+        #randomAgentButton.random-agent-active {
+            transform: scale(0.8); /* Make the button smaller */
+        }
+
+        #randomAgentResult {
+            display: none;
+        }
+
         #closeRandomAgentButton {
-            background: none;
-            border: none;
+            background-color: transparent;
+            color: #FFF;
             font-size: 20px;
-            color: red;
             cursor: pointer;
             display: none;
-            margin-left: 5px; /* Add spacing from the random agent picker button */
         }
 
         @media (max-width: 768px) {
@@ -182,30 +188,29 @@
       "Gekko",
     ];
   
-    // Function to pick a random agent
     function pickRandomAgent() {
-    const randomIndex = Math.floor(Math.random() * agents.length);
-    return agents[randomIndex];
-  }
+            const randomIndex = Math.floor(Math.random() * agents.length);
+            return agents[randomIndex];
+        }
 
-  const randomAgentButton = document.getElementById("randomAgentButton");
-  const randomAgentResult = document.getElementById("randomAgentResult");
-  const closeRandomAgentButton = document.getElementById("closeRandomAgentButton");
+        const randomAgentButton = document.getElementById("randomAgentButton");
+        const randomAgentResult = document.getElementById("randomAgentResult");
+        const closeRandomAgentButton = document.getElementById("closeRandomAgentButton");
 
-  // Event listener for the random agent picker button
-  randomAgentButton.addEventListener("click", function () {
-    const randomAgent = pickRandomAgent();
-    randomAgentResult.textContent = `Random Agent: ${randomAgent}`;
-    randomAgentButton.style.display = "none";
-    closeRandomAgentButton.style.display = "inline";
-  });
+        randomAgentButton.addEventListener("click", function () {
+            const randomAgent = pickRandomAgent();
+            randomAgentResult.textContent = `Random Agent: ${randomAgent}`;
+            randomAgentButton.classList.add("random-agent-active");
+            randomAgentResult.style.display = "inline";
+            closeRandomAgentButton.style.display = "inline";
+        });
 
-  // Event listener for the close button
-  closeRandomAgentButton.addEventListener("click", function () {
-    randomAgentResult.textContent = "";
-    randomAgentButton.style.display = "inline";
-    closeRandomAgentButton.style.display = "none";
-  });
+        closeRandomAgentButton.addEventListener("click", function () {
+            randomAgentResult.textContent = "";
+            randomAgentButton.classList.remove("random-agent-active");
+            randomAgentResult.style.display = "none";
+            closeRandomAgentButton.style.display = "none";
+        });
     </script>
   
 </body>
