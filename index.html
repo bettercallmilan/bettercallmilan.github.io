@@ -120,9 +120,11 @@
     
     <button id="changeBackgroundButton">Change Background</button>
 
-    <button id="randomAgentButton">Pick Random Agent</button>
+    <button id="randomAgentButton" style="margin-top: 20px;">Pick Random VALORANT Agent</button>
     <p id="randomAgentResult"></p>
-    
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <img id="agentPicture" src="" alt="" width="70" height="70" style="display: none;">
+    </div>    
     <script>
         const backgrounds = [
             "https://github.com/bettercallmilan/bettercallmilan.github.io/blob/main/docs/assets/wallpaper.jpg?raw=true",
@@ -150,40 +152,42 @@
     <script>
     // List of Valorant agents
     const agents = [
-      "Phoenix",
-      "Raze",
-      "Jett",
-      "Yoru",
-      "Neon",
-      "Reyna",
-      "Sage",
-      "Cypher",
-      "Chamber",
-      "Killjoy",
-      "Omen",
-      "Viper",
-      "Brimstone",
-      "Astra",
-      "Harbor",
-      "Sova",
-      "Breach",
-      "Skye",
-      "KAY/O",
-      "Fade",
-      "Deadlock",
-      "Gekko",
-    ];
+            { name: "Phoenix", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/gekko.png"},
+            { name: "Raze", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/raze.png" },
+            { name: "Jett", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/jett.png" },
+            { name: "Yoru", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/yoru.png" },
+            { name: "Neon", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/neon.png" },
+            { name: "Reyna", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/reyna.png" },
+            { name: "Sage", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/sage.png" },
+            { name: "Cypher", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/cypher.png" },
+            { name: "Chamber", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/chamber.png" },
+            { name: "Killjoy", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/killjoy.png" },
+            { name: "Omen", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/omen.png" },
+            { name: "Viper", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/viper.png" },
+            { name: "Brimstone", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/brimstone.png" },
+            { name: "Astra", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/astra.png" },
+            { name: "Harbor", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/harbor.png" },
+            { name: "Sova", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/sova.png" },
+            { name: "Breach", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/breach.png" },
+            { name: "Skye", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/skye.png" },
+            { name: "KAY/O", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/kayo.png" },
+            { name: "Fade", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/fade.png" },
+            { name: "Deadlock", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/deadlock.png" },
+            { name: "Gekko", imageUrl: "https://www.valorantpicker.com/assets/imgs/agents/icons/gekko.png"},
+            { name: "Iso", imageUrl: "https://pbs.twimg.com/media/F9eyE2mWwAA-weq.png"}
+        ];
   
     function pickRandomAgent() {
-    const randomIndex = Math.floor(Math.random() * agents.length);
-    return agents[randomIndex];
-    }
+        const randomIndex = Math.floor(Math.random() * agents.length);
+        const randomAgent = agents[randomIndex];
+        document.getElementById("randomAgentResult").innerHTML = `Random Agent: <strong>${randomAgent.name}</strong>`;
+        const agentPicture = document.getElementById("agentPicture");
+        agentPicture.src = randomAgent.imageUrl;
+        agentPicture.style.display = "block"; // Show the image
+      }
 
-    // Event listener for the button
-    document.getElementById("randomAgentButton").addEventListener("click", function () {
-        const randomAgent = pickRandomAgent();
-        document.getElementById("randomAgentResult").textContent = `Random Agent: ${randomAgent}`;
-    });
+      // Event listener for the button
+      document.getElementById("randomAgentButton").addEventListener("click", pickRandomAgent);
     </script>
   
 </body>
