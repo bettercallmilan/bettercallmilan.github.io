@@ -66,28 +66,15 @@
         }
 
         #randomAgentButton {
-            position: absolute;
+            display: block;
             background: transparent;
             color: #FFF;
             border: 1px solid #FFF;
             padding: 10px 20px;
             cursor: pointer;
-        }
-
-        #randomAgentButton.random-agent-active {
-            transform: scale(0.8); /* Make the button smaller */
-        }
-
-        #randomAgentResult {
-            display: none;
-        }
-
-        #closeRandomAgentButton {
-            background-color: transparent;
-            color: #FFF;
-            font-size: 20px;
-            cursor: pointer;
-            display: none;
+            margin: 0 auto; /* Center-align the button */
+            text-align: center; /* Center-align the button text */
+            position: relative; /* Add position relative to the button */
         }
 
         @media (max-width: 768px) {
@@ -134,8 +121,7 @@
     <button id="changeBackgroundButton">Change Background</button>
 
     <button id="randomAgentButton">Pick Random Agent</button>
-    <span id="randomAgentResult"></span>
-    <button id="closeRandomAgentButton">X</button> 
+    <p id="randomAgentResult"></p>
     
     <script>
         const backgrounds = [
@@ -189,28 +175,15 @@
     ];
   
     function pickRandomAgent() {
-            const randomIndex = Math.floor(Math.random() * agents.length);
-            return agents[randomIndex];
-        }
+    const randomIndex = Math.floor(Math.random() * agents.length);
+    return agents[randomIndex];
+    }
 
-        const randomAgentButton = document.getElementById("randomAgentButton");
-        const randomAgentResult = document.getElementById("randomAgentResult");
-        const closeRandomAgentButton = document.getElementById("closeRandomAgentButton");
-
-        randomAgentButton.addEventListener("click", function () {
-            const randomAgent = pickRandomAgent();
-            randomAgentResult.textContent = `Random Agent: ${randomAgent}`;
-            randomAgentButton.classList.add("random-agent-active");
-            randomAgentResult.style.display = "inline";
-            closeRandomAgentButton.style.display = "inline";
-        });
-
-        closeRandomAgentButton.addEventListener("click", function () {
-            randomAgentResult.textContent = "";
-            randomAgentButton.classList.remove("random-agent-active");
-            randomAgentResult.style.display = "none";
-            closeRandomAgentButton.style.display = "none";
-        });
+    // Event listener for the button
+    document.getElementById("randomAgentButton").addEventListener("click", function () {
+        const randomAgent = pickRandomAgent();
+        document.getElementById("randomAgentResult").textContent = `Random Agent: ${randomAgent}`;
+    });
     </script>
   
 </body>
