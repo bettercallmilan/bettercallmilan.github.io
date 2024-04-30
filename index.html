@@ -10,6 +10,10 @@
     <meta name="keywords" content="Jankovic Tech">
     <meta name="author" content="Jankovic Tech">
     <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*;">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin">
     <title>jankovic.tech</title>
     <style>
         body {
@@ -72,9 +76,9 @@
             border: 1px solid #FFF;
             padding: 10px 20px;
             cursor: pointer;
-            margin: 0 auto; /* Center-align the button */
-            text-align: center; /* Center-align the button text */
-            position: relative; /* Add position relative to the button */
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
         }
 
         @media (max-width: 768px) {
@@ -184,10 +188,9 @@
         document.getElementById("randomAgentResult").innerHTML = `Random Agent: <strong>${randomAgent.name}</strong>`;
         const agentPicture = document.getElementById("agentPicture");
         agentPicture.src = randomAgent.imageUrl;
-        agentPicture.style.display = "block"; // Show the image
+        agentPicture.style.display = "block";
       }
 
-      // Event listener for the button
       document.getElementById("randomAgentButton").addEventListener("click", pickRandomAgent);
     </script>
   
