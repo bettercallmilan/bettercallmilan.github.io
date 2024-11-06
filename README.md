@@ -1,6 +1,6 @@
-# jankovic.tech
+# bettercallmilan.github.io
 
-Welcome to my personal website, [jankovic.tech](https://jankovic.tech), where you can find links to my social media profiles and contact information. This repository contains the HTML and CSS code for my website.
+Welcome to my personal website, [bettercallmilan.github.io](https://bettercallmilan.github.io), where you can find links to my social media profiles and contact information. This repository contains the HTML and CSS code for my website.
 
 ## Table of Contents
 - [About](#about)
@@ -16,10 +16,7 @@ This website serves as a digital business card, providing links to my Instagram,
 - Contact information with an option to send an email
 
 ## Usage
-To view the website, simply visit [jankovic.tech](https://jankovic.tech) in your web browser.
-
-### Changing the Background Image
-To change the background image, press the `Change Background` button on the website.
+To view the website, simply visit [bettercallmilan.github.io](https://bettercallmilan.github.io) in your web browser.
 
 ## License
 This project is open-source and available under the [MIT License](LICENSE).
