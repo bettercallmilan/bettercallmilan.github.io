@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #e5e5e5;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.5;
+    background: 
+        linear-gradient(to bottom right, transparent 0%, rgba(79, 70, 229, 0.1) 100%),
+        radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.1) 0%, transparent 50%);
+}
+
+.container {
+    background: linear-gradient(145deg, rgba(19, 19, 19, 0.3), rgba(25, 25, 25, 0.3));
+    padding: 3rem;
+    border-radius: 24px;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #4f46e5, #818cf8);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: slideIn 0.8s ease forwards;
+}
+
+@keyframes slideIn {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.bio {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #a3a3a3;
+}
+
+.bio strong {
+    background: linear-gradient(90deg, #818cf8, #4f46e5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+}
+
+.links {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-decoration: none;
+    color: #e5e5e5;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.link-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(79, 70, 229, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.link-item:hover {
+    transform: translateY(-2px);
+    background: rgba(79, 70, 229, 0.1);
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2);
+}
+
+.link-item:hover::before {
+    transform: translateX(100%);
+}
+
+.link-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.link-item:hover img {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.link-text {
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
