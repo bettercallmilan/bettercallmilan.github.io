@@ -3,153 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milan Jankovic</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Milan's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <canvas class="particles"></canvas>
-    <div class="background"></div>
-    <div class="container">
-        <h1>Milan Jankovic</h1>
-        
-        <div class="bio">
-            <strong>18 y/o</strong><br>
-            🇨🇭<br>
-        </div>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>
+                    <span class="name">Milan Jankovic</span>
+                </h1>
+                <p class="tagline">bla bla bla</p>
+            </div>
+        </section>
 
-        <div class="links">
-            <a href="https://bettercallmilan.github.io/lens" class="link-item" target="_blank">
-                <span class="link-text">Project: Milan's Lens</span>
-            </a>
-            
-            <a href="https://www.instagram.com/milan.sag" class="link-item" target="_blank">
-                <img src="instagram_logo.png" alt="Instagram" />
-                <span class="link-text">@milan.sag</span>
-            </a>
-            
-            <a href="https://www.github.com/bettercallmilan" class="link-item" target="_blank">
-                <img src="github_logo.png" alt="GitHub" />
-                <span class="link-text">@bettercallmilan</span>
-            </a>
-            
-            <a href="https://matrix.to/#/@mentalfox:envs.net" class="link-item" target="_blank">
-                <img src="element_logo.png" alt="Matrix" />
-                <span class="link-text">@mentalfox:envs.net</span>
-            </a>
-            
-            <a onclick="decodeAndMailTo()" class="link-item" style="cursor: pointer">
-                <img src="gmail_logo.png" alt="Email" />
-                <span class="link-text">E-Mail</span>
-            </a>
-        </div>
-    </div>
+        <section class="section" id="about">
+            <div class="content-wrapper">
+                <h2>About</h2>
+                <div class="reveal-content">
+                    <p>cv or something like that</p>
+                </div>
+            </div>
+        </section>
 
-    <script>
-        const canvas = document.querySelector('.particles');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        let mouse = {
-            x: null,
-            y: null,
-            radius: 100
-        };
+        <section class="section" id="experience">
+            <div class="content-wrapper">
+                <h2>Experience</h2>
+                <div class="reveal-content">
+                    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                </div>
+            </div>
+        </section>
 
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        document.addEventListener('mousemove', function(event) {
-            mouse.x = event.x;
-            mouse.y = event.y;
-        });
-
-        class Particle {
-            constructor() {
-                this.reset();
-            }
-
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 1;
-                this.baseX = this.x;
-                this.baseY = this.y;
-                this.density = (Math.random() * 30) + 1;
-                this.opacity = Math.random() * 0.5;
-                this.speedX = Math.random() * 0.5 - 0.25;
-                this.speedY = Math.random() * 0.5 - 0.25;
-            }
-
-            update() {
-                this.baseX += this.speedX;
-                this.baseY += this.speedY;
-
-                if (this.baseX < 0 || this.baseX > canvas.width) this.speedX *= -1;
-                if (this.baseY < 0 || this.baseY > canvas.height) this.speedY *= -1;
-
-                let dx = mouse.x - this.x;
-                let dy = mouse.y - this.y;
-                let distance = Math.sqrt(dx * dx + dy * dy);
-                let forceDirectionX = dx / distance;
-                let forceDirectionY = dy / distance;
-                let maxDistance = mouse.radius;
-                let force = (maxDistance - distance) / maxDistance;
-                let directionX = forceDirectionX * force * this.density;
-                let directionY = forceDirectionY * force * this.density;
-
-                if (distance < mouse.radius) {
-                    this.x -= directionX;
-                    this.y -= directionY;
-                } else {
-                    if (this.x !== this.baseX) {
-                        let dx = this.x - this.baseX;
-                        this.x -= dx/10;
-                    }
-                    if (this.y !== this.baseY) {
-                        let dy = this.y - this.baseY;
-                        this.y -= dy/10;
-                    }
-                }
-            }
-
-            draw() {
-                ctx.fillStyle = `rgba(79, 70, 229, ${this.opacity})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function initParticles() {
-            particles = [];
-            for (let i = 0; i < 50; i++) {
-                particles.push(new Particle());
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
-
-            requestAnimationFrame(animate);
-        }
-
-        initParticles();
-        animate();
-
-        function decodeAndMailTo() {
-            const encodedEmail = "Y29udGFjdEBqYW5rb3ZpYy50ZWNo";
-            const email = atob(encodedEmail);
-            window.location.href = "mailto:m.jankovic.inf23@stud.bbbaden.ch";
-        }
-    </script>
+        <section class="section" id="projects">
+            <div class="content-wrapper">
+                <h2>Projects</h2>
+                <div class="reveal-content">
+                    <p>3 projects</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
