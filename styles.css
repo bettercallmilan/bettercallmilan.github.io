@@ -112,16 +112,15 @@ header {
     background-color: var(--bg-color);
     border-bottom: 1px solid var(--border-color);
     padding: 1.25rem 2rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     transition: background-color var(--transition-speed), border-color var(--transition-speed);
     box-shadow: var(--shadow-sm);
 }
 
 .logo {
-    display: flex;
-    flex-direction: column;
+    justify-self: start;
 }
 
 .logo .name {
@@ -182,6 +181,10 @@ nav a:hover::after {
     width: 100%;
 }
 
+#about {
+    scroll-margin-top: 100px;
+}
+
 /* Theme toggle button */
 .theme-toggle {
     background-color: transparent;
@@ -193,6 +196,7 @@ nav a:hover::after {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: auto;
     transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
 
@@ -208,12 +212,12 @@ nav a:hover::after {
 
 /* Hero section */
 .hero {
-    height: calc(100vh - 200px);
+    height: 50vh;
     min-height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 4rem 0;
+    padding: 0;
     text-align: center;
 }
 
