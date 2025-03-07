@@ -3,47 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milan's Portfolio</title>
+    <title>Milan Jankovic</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <div class="logo">
+            Milan Jankovic
+            <p class="project-title">> simplicity is the soul of efficiency</p>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+            <span id="theme-icon">🌙</span>
+        </button>
+    </header>
+
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>
-                    <span class="name">Milan Jankovic</span>
-                </h1>
-                <p class="tagline">Coming soon</p>
+        <section id="about">
+            <h2>> about me</h2>
+            <div class="profile">
+                <p>Hello, I'm a passionate developer who loves creating clean and functional websites.</p>
             </div>
         </section>
 
-        <section class="section" id="about">
-            <div class="content-wrapper">
-                <h2>About</h2>
-                <div class="reveal-content">
-                    <p>Coming soon</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="experience">
-            <div class="content-wrapper">
-                <h2>Experience</h2>
-                <div class="reveal-content">
-                    <p>Coming soon</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="projects">
-            <div class="content-wrapper">
-                <h2>Projects</h2>
-                <div class="reveal-content">
-                    <p>Coming soon</p>
-                </div>
+        <section id="projects">
+            <h2>> projects</h2>
+            <div class="projects">
+                <a class="project-card" href="https://example.com/portfolio-website">
+                    <div class="project-title">Portfolio Website</div>
+                    <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+                </a>
+                <a class="project-card" href="https://example.com/portfolio-website">
+                    <div class="project-title">Portfolio Website</div>
+                    <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+                </a>
+                <a class="project-card" href="https://example.com/portfolio-website">
+                    <div class="project-title">Portfolio Website</div>
+                    <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+                </a>
             </div>
         </section>
     </main>
+
+    <footer>
+        <section id="contact">
+            <div class="contact-info">
+                <p>&copy; 2025 Milan Jankovic</p>
+            </div>
+            <div class="social-links">
+                <a href="mailto:jankovic.milan@proton.me">Email</a>
+                <a href="https://www.instagram.com/milan.sag/">Instagram</a>
+                <a href="https://matrix.to/#/@mentalfox:envs.net">Matrix</a>
+                <a href="https://github.com/bettercallmilan">GitHub</a>
+                <a href="https://www.linkedin.com/in/milan-j-8ab78a353/">LinkedIn</a>
+            </div>
+        </section>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

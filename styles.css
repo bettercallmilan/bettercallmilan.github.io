@@ -1,95 +1,173 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --accent-color: #0066cc;
+    --secondary-bg: #f5f5f5;
+    --border-color: #dddddd;
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --accent-color: #4d9fff;
+    --secondary-bg: #1e1e1e;
+    --border-color: #333333;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
-    color: #333;
-    overflow-x: hidden;
-    background-color: #fff;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.hero {
-    height: 100vh;
+header {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.theme-toggle {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    background-color: #fff;
-    position: relative;
+    line-height: 1;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.hero-content {
+.theme-toggle:hover {
+    background-color: var(--secondary-bg);
+    transform: scale(1.1);
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 2rem;
 }
 
+section {
+    margin-bottom: 3rem;
+}
+
+h1, h2 {
+    margin-bottom: 1.5rem;
+}
+
 h1 {
-    font-size: 5rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-}
-
-.name {
-    display: block;
-}
-
-.tagline {
-    font-size: 1.5rem;
-    color: #666;
-    opacity: 0.8;
-}
-
-.section {
-    min-height: 100vh;
-    padding: 5rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    background-color: #fff;
-}
-
-.section:nth-child(even) {
-    background-color: #f5f5f7;
-}
-
-.content-wrapper {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.content-wrapper.visible {
-    opacity: 1;
-    transform: translateY(0);
+    font-size: 2rem;
 }
 
 h2 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
 }
 
-@media (max-width: 768px) {
-    h1 {
-        font-size: 3rem;
+p {
+    margin-bottom: 1rem;
+}
+
+.profile {
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    background-color: var(--secondary-bg);
+    border-radius: 50%;
+    margin-right: 1.5rem;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: var(--secondary-bg);
+    border-radius: 4px;
+    padding: 1.5rem;
+    transition: transform 0.3s;
+    color: var(--text-color); 
+    text-decoration: none;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    background-color: var(--secondary-bg);
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.contact-info {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--text-color);
+}
+
+.social-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    header, main, footer {
+        padding: 1rem;
     }
 
-    .tagline {
-        font-size: 1.2rem;
+    .profile {
+        flex-direction: column;
+        text-align: center;
     }
 
-    h2 {
-        font-size: 2rem;
+    .profile-pic {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
     }
 }

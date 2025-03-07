@@ -1,16 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px'
-    });
-
-    document.querySelectorAll('.content-wrapper').forEach((wrapper) => {
-        observer.observe(wrapper);
-    });
-});
+function toggleTheme() {
+    const body = document.body;
+    const themeIcon = document.getElementById('theme-icon');
+    
+    if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        themeIcon.textContent = '🌙';
+    } else {
+        body.classList.add('dark-mode');
+        themeIcon.textContent = '☀️';
+    }
+}
