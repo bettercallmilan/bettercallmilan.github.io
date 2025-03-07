@@ -3,61 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milan Jankovic</title>
+    <title>Milan Jankovic | Developer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            Milan Jankovic
-            <p class="project-title">> simplicity is the soul of efficiency</p>
+            <span class="name">Milan Jankovic</span>
+            <div class="timestamp" id="timestamp">2025-03-07 12:04:40 UTC</div>
+            <p class="tagline">> simplicity is the soul of efficiency</p>
         </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
             <span id="theme-icon">🌙</span>
         </button>
     </header>
 
     <main>
-        <section id="about">
-            <h2>> about me</h2>
-            <div class="profile">
-                <p>Hello, I'm a passionate developer who loves creating clean and functional websites.</p>
+        <section id="about" class="hero">
+            <div class="container">                                
+                <h1>Milan Jankovic</h1>
+                <p class="intro">Hi, I'm a passionate developer focused on creating clean, efficient, and functional applications.</p>
+                
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn primary-btn">Contact Me</a>
+                    <a href="#projects" class="btn secondary-btn">View Projects</a>
+                </div>
             </div>
         </section>
 
+        <section id="skills">
+            <div class="container">
+                <h2>> skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                            <span class="skill-tag"><i class="fab fa-csharp"></i> C#</span>
+                            <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="skill-tag"><i class="fab fa-html5"></i> HTML</span>
+                            <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span class="skill-tag"><i class="fas fa-database"></i> SQL</span>
+                            <span class="skill-tag"><i class="fas fa-terminal"></i> PowerShell</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Frameworks & Technologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fas fa-code-branch"></i> ASP.NET Web-API</span>
+                            <span class="skill-tag"><i class="fab fa-aws"></i> Amazon Web Services</span>
+                            <span class="skill-tag"><i class="fas fa-database"></i> Database Management</span>
+                            <span class="skill-tag"><i class="fas fa-network-wired"></i> TCP/IP</span>
+                            <span class="skill-tag"><i class="fas fa-user"></i> User Experience (UX)</span>
+                            <span class="skill-tag"><i class="fas fa-server"></i> Containerization</span>
+                            <span class="skill-tag"><i class="fas fa-tasks"></i> Scrum</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Tools & Development</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                            <span class="skill-tag"><i class="fab fa-github"></i> GitHub</span>
+                            <span class="skill-tag"><i class="fab fa-gitlab"></i> GitLab</span>
+                            <span class="skill-tag"><i class="fas fa-code"></i> Visual Studio Code</span>
+                            <span class="skill-tag"><i class="fas fa-bug"></i> Debugging</span>
+                            <span class="skill-tag"><i class="fas fa-clipboard-check"></i> Code Coverage</span>
+                            <span class="skill-tag"><i class="fas fa-sticky-note"></i> User Stories</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Additional Knowledge</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fas fa-cubes"></i> OOP</span>
+                            <span class="skill-tag"><i class="fas fa-globe"></i> IP Addressing</span>
+                            <span class="skill-tag"><i class="fas fa-laptop-code"></i> Web Development</span>
+                            <span class="skill-tag"><i class="fas fa-balance-scale"></i> Business Law</span>
+                            <span class="skill-tag"><i class="fas fa-chart-line"></i> Finance</span>
+                            <span class="skill-tag"><i class="fas fa-language"></i> French</span>
+                            <span class="skill-tag"><i class="fas fa-certificate"></i> CAE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                
         <section id="projects">
-            <h2>> projects</h2>
-            <div class="projects">
-                <a class="project-card" href="https://example.com/portfolio-website">
-                    <div class="project-title">Portfolio Website</div>
-                    <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
-                </a>
-                <a class="project-card" href="https://example.com/portfolio-website">
-                    <div class="project-title">Portfolio Website</div>
-                    <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
-                </a>
-                <a class="project-card" href="https://example.com/portfolio-website">
-                    <div class="project-title">Portfolio Website</div>
-                    <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
-                </a>
+            <div class="container">
+                <h2>> projects</h2>
+                <div class="projects">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Portfolio Website</div>
+                            <div class="project-icons">
+                                <i class="fab fa-html5"></i>
+                                <i class="fab fa-css3-alt"></i>
+                                <i class="fab fa-js"></i>
+                            </div>
+                        </div>
+                        <p>A responsive photography website built with HTML, CSS, and JavaScript.</p>
+                        <div class="project-links">
+                            <a href="https://bettercallmilan.github.io/lens" class="project-link"><i class="fas fa-external-link-alt"></i> Link</a>
+                            <a href="https://github.com/bettercallmilan/lens" class="project-link"><i class="fab fa-github"></i> GitHub Repository</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Contact Card</div>
+                            <div class="project-icons">
+                                <i class="fab fa-html5"></i>
+                                <i class="fab fa-css3-alt"></i>
+                                <i class="fab fa-js"></i>
+                            </div>
+                        </div>
+                        <p>Old portfolio website, now a contact card.</p>
+                        <div class="project-links">
+                            <a href="https://bettercallmilan.github.io/contact-card" class="project-link"><i class="fas fa-external-link-alt"></i> Link</a>
+                            <a href="https://github.com/bettercallmilan/contact-card" class="project-link"><i class="fab fa-github"></i> GitHub Repository</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Task Manager</div>
+                            <div class="project-icons">
+                                <i class="fab fa-csharp"></i>
+                            </div>
+                        </div>
+                        <p>A simple calendar application built with C# for managing tasks and events efficiently.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/bettercallmilan/Lernatelier_2023-2024" class="project-link"><i class="fab fa-github"></i> GitHub Repository</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <section id="contact">
-            <div class="contact-info">
-                <p>&copy; 2025 Milan Jankovic</p>
-            </div>
-            <div class="social-links">
-                <a href="mailto:jankovic.milan@proton.me">Email</a>
-                <a href="https://www.instagram.com/milan.sag/">Instagram</a>
-                <a href="https://matrix.to/#/@mentalfox:envs.net">Matrix</a>
-                <a href="https://github.com/bettercallmilan">GitHub</a>
-                <a href="https://www.linkedin.com/in/milan-j-8ab78a353/">LinkedIn</a>
+        <section id="cv">
+            <div class="container">
+                <h2>> curriculum vitae</h2>
+                <div class="cv-content">
+                    <div class="cv-section">
+                        <h3>Education</h3>
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <span class="cv-date">2023 - 2027</span>
+                                <span class="cv-title">Software development</span>
+                            </div>
+                            <div class="cv-location">Berufsfachschule BBB Baden</div>
+                            <p class="cv-description">
+                                Focus on web development, databases, and cloud applications.
+                            </p>
+                            <div class="cv-skills">
+                                <span class="skill-tag"><i class="fab fa-github"></i> GitHub</span>
+                                <span class="skill-tag"><i class="fab fa-gitlab"></i> GitLab</span>
+                                <span class="skill-tag"><i class="fas fa-database"></i> SQL</span>
+                                <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                                <span class="skill-tag"><i class="fab fa-html5"></i> HTML</span>
+                                <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS</span>
+                                <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                                <span class="skill-tag"><i class="fab fa-csharp"></i> C#</span>
+                                <span class="skill-tag"><i class="fab fa-aws"></i> AWS</span>
+                                <span class="skill-tag"><i class="fas fa-code-branch"></i> ASP.NET</span>
+                                <span class="skill-tag"><i class="fas fa-network-wired"></i> TCP/IP</span>
+                            </div>
+                        </div>
+        
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <span class="cv-date">2023 - 2027</span>
+                                <span class="cv-title">Economics</span>
+                            </div>
+                            <div class="cv-location">Kantonsschule Baden</div>
+                            <p class="cv-description">
+                                Focus on business law, finance, and languages.
+                            </p>
+                            <div class="cv-skills">
+                                <span class="skill-tag"><i class="fas fa-balance-scale"></i> Wirtschaftsrecht</span>
+                                <span class="skill-tag"><i class="fas fa-gavel"></i> Recht</span>
+                                <span class="skill-tag"><i class="fas fa-chart-line"></i> Finanzwesen</span>
+                                <span class="skill-tag"><i class="fas fa-language"></i> Französisch</span>
+                                <span class="skill-tag"><i class="fas fa-certificate"></i> CAE</span>
+                            </div>
+                        </div>
+        
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <span class="cv-date">2020 - 2023</span>
+                                <span class="cv-title">Secondary School</span>
+                            </div>
+                            <div class="cv-location">Bezirksschule Brugg</div>
+                        </div>
+                    </div>
+                
+                    <div class="cv-download">
+                        <a href="" class="btn download-btn">
+                            <i class="fas fa-download"></i> Download Full CV
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>> get in touch</h3>
+                    <p>I'm always open to new opportunities and collaborations.</p>
+                    <div class="contact-email">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:jankovic.milan@proton.me">jankovic.milan@proton.me</a>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="mailto:jankovic.milan@proton.me" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.instagram.com/milan.sag/" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://matrix.to/#/@mentalfox:envs.net" class="social-link" aria-label="Matrix">
+                        <i class="fas fa-comment-dots"></i>
+                    </a>
+                    <a href="https://github.com/bettercallmilan" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/milan--jankovic/" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Milan Jankovic</p>
+                <p class="user-tag">@bettercallmilan</p>
+            </div>
+        </div>
     </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>
