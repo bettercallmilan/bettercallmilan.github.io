@@ -1,0 +1,397 @@
+:root {
+    --bg-color: #0d1117;
+    --text-color: #c9d1d9;
+    --accent-color: #58a6ff;
+    --secondary-color: #79c0ff;
+    --terminal-bg: #161b22;
+    --success-color: #3fb950;
+    --pending-color: #f0883e;
+    --error-color: #f85149;
+    --border-color: #30363d;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.timestamp {
+    font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.user-tag {
+    font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.icon-container {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.glitch-text {
+    position: relative;
+}
+
+.glitch-text:hover {
+    animation: glitch 0.5s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+.message {
+    margin-bottom: 2rem;
+}
+
+.message p {
+    margin-bottom: 0.5rem;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: var(--pending-color);
+    border-radius: 50%;
+    display: inline-block;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+.progress {
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.progress-bar {
+    height: 6px;
+    background-color: var(--border-color);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-completed {
+    height: 100%;
+    width: 75%;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+    position: relative;
+    animation: progress-animation 3s ease-in-out forwards;
+    transform-origin: left;
+}
+
+@keyframes progress-animation {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
+
+.progress-text {
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+}
+
+.cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    border-color: var(--text-color);
+    transform: translateX(-3px);
+}
+
+.contact-btn {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.contact-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* Add these styles to your coming-soon.css file to fix the terminal input */
+
+/* Terminal specific styles */
+.terminal {
+    width: 100%;
+    margin-top: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+.terminal-content {
+    background-color: var(--terminal-bg, #161b22);
+    padding: 1rem;
+    min-height: 250px;
+    max-height: 350px;
+    overflow-y: auto;
+    color: var(--text-color, #c9d1d9);
+}
+
+.terminal-line {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.command-line {
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    color: var(--secondary-color, #79c0ff);
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.terminal-input {
+    background: transparent;
+    border: none;
+    color: var(--accent-color, #58a6ff);
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    flex-grow: 1;
+    caret-color: var(--text-color, #c9d1d9);
+    padding: 0;
+}
+
+.terminal-input:disabled {
+    opacity: 1;
+    color: var(--accent-color, #58a6ff);
+    -webkit-text-fill-color: var(--accent-color, #58a6ff);
+}
+
+.terminal-help {
+    text-align: center;
+    opacity: 0.7;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    background-color: #2d333b;
+    padding: 0.5rem 1rem;
+    user-select: none;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.terminal-buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+}
+
+.terminal-buttons span:nth-child(1) {
+    background-color: #ff5f56;
+}
+
+.terminal-buttons span:nth-child(2) {
+    background-color: #ffbd2e;
+}
+
+.terminal-buttons span:nth-child(3) {
+    background-color: #27c93f;
+}
+
+.terminal-title {
+    margin-left: auto;
+    margin-right: auto;
+    color: #8b949e;
+    font-size: 0.8rem;
+}
+
+.terminal-content {
+    background-color: var(--terminal-bg);
+    padding: 1rem;
+    min-height: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    cursor: text;
+    outline: none;
+}
+
+.terminal-line {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    line-height: 1.4;
+}
+
+.command {
+    color: var(--accent-color);
+}
+
+.success {
+    color: var(--success-color);
+}
+
+.pending {
+    color: var(--pending-color);
+}
+
+.error {
+    color: var(--error-color);
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background-color: var(--text-color);
+    animation: cursor-blink 1.5s infinite step-end;
+    vertical-align: middle;
+}
+
+.terminal-help {
+    text-align: center;
+    opacity: 0.7;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.typed-command {
+    color: var(--accent-color, #58a6ff);
+}
+
+.typed-command.executed {
+    color: var(--accent-color, #58a6ff);
+}
+
+@keyframes cursor-blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .cta {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
