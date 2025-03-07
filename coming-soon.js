@@ -34,12 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Define command responses
         const commandResponses = {
             'help': 'Available commands: help, ls, cat, status, clear, whoami, date, echo, exit',
-            'ls': 'cv.pdf\nprojects.txt\nskills.json\nexperience.md\neducation.md',
+            'ls': 'cv.pdf\nprojects.txt\nskills.json\neducation.md',
             'cat': 'Usage: cat [filename] - Please specify a file to display',
             'cat cv.pdf': 'Error: Binary file cannot be displayed in terminal',
             'cat projects.txt': 'Portfolio Website\nWeather App\nTask Manager',
             'cat skills.json': '{\n  "languages": ["Python", "C#", "JavaScript", "HTML", "CSS"],\n  "frameworks": ["ASP.NET Web-API"],\n  "tools": ["Git", "GitHub", "GitLab", "VS Code"]\n}',
-            'cat experience.md': '# Experience\n\n- Frontend Developer at TechCorp Inc. (2023-Present)\n- Web Developer Intern at Digital Solutions Ltd. (2022-2023)',
             'cat education.md': '# Education\n\n- Berufsfachschule BBB Baden (2023-2027)\n- Kantonsschule Baden (2023-2027)\n- Bezirksschule Brugg (2020-2023)',
             'status': 'CV Status: 75% complete\n- Education: Complete\n- Experience: In Progress\n- Skills: Complete\n- Projects: Complete',
             'whoami': '@bettercallmilan',
