@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Update timestamp
     function updateTimestamp() {
         const timestampElement = document.getElementById('timestamp');
         
         function formatDateCET(date) {
-            // Get UTC time and add 1 hour for CET
             const utcDate = new Date(date);
             const cetDate = new Date(utcDate.getTime() + (60 * 60 * 1000));
             
@@ -27,11 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Interactive Terminal
     function initInteractiveTerminal() {
         const terminalContent = document.querySelector('.terminal-content');
         
-        // Define command responses
         const commandResponses = {
             'help': 'Available commands: help, ls, cat, status, clear, whoami, date, echo, exit',
             'ls': 'cv.pdf\nprojects.txt\nskills.json\neducation.md',
@@ -46,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
             'exit': 'Redirecting to portfolio...'
         };
         
-        // Initialize terminal
         terminalContent.innerHTML = `<div class="terminal-line">Welcome to Milan's Terminal. Type 'help' for available commands.</div>`;
         addNewCommandLine();
         
@@ -54,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let historyIndex = -1;
         let currentInput = '';
         
-        // Focus on terminal when clicked
         terminalContent.addEventListener('click', function() {
             const inputField = document.querySelector('.terminal-input');
             if (inputField) {
@@ -62,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Simulate initial command
         setTimeout(() => {
             const initialCommand = 'status';
             simulateTyping(initialCommand, function() {
@@ -95,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const inputField = line.querySelector('.terminal-input');
             inputField.focus();
             
-            // Handle input events
             inputField.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter') {
                     e.preventDefault();
@@ -111,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            // Scroll to bottom
             terminalContent.scrollTop = terminalContent.scrollHeight;
             inputField.focus();
         }
@@ -134,21 +125,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         function executeCommand(command) {
-            // Add to history if not empty
             if (command) {
                 commandHistory.push(command);
             }
             historyIndex = -1;
             
-            // Process command
             const cmdParts = command.trim().split(' ');
             const baseCmd = cmdParts[0].toLowerCase();
             const args = cmdParts.slice(1).join(' ');
             
-            // Find response
             let response = '';
             if (command === '') {
-                // Empty command, no response
             } else if (baseCmd === 'cat' && args) {
                 const fullCmd = `${baseCmd} ${args}`;
                 response = commandResponses[fullCmd] || `Error: File '${args}' not found`;
@@ -163,11 +150,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 response = `Command not found: ${command}. Type 'help' for available commands.`;
             }
             
-            // Handle special commands
             if (baseCmd === 'clear') {
                 terminalContent.innerHTML = '';
             } else if (response && baseCmd !== 'exit') {
-                // Display response
                 const responseLines = response.split('\n');
                 for (const line of responseLines) {
                     const responseLine = document.createElement('div');
@@ -177,7 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             
-            // Handle exit command
             if (baseCmd === 'exit') {
                 const exitLine = document.createElement('div');
                 exitLine.className = 'terminal-line';
@@ -190,12 +174,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Add new command line
             addNewCommandLine();
         }
     }
     
-    // Initialize
     updateTimestamp();
     initInteractiveTerminal();
 });
