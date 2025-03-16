@@ -11,12 +11,10 @@ function toggleTheme() {
     }
 }
 
-// Function to update timestamp with current CET time (UTC+1)
 function updateTimestamp() {
     const timestampElement = document.getElementById('timestamp');
     
     function formatDateCET(date) {
-        // Get UTC time and add 1 hour for CET
         const utcDate = new Date(date);
         const cetDate = new Date(utcDate.getTime() + (60 * 60 * 1000));
         
@@ -30,16 +28,13 @@ function updateTimestamp() {
         return `${year}-${month}-${day} ${hours}:${minutes}:${seconds} CET`;
     }
     
-    // Update timestamp immediately
     timestampElement.textContent = formatDateCET(new Date());
     
-    // Update timestamp every second
     setInterval(() => {
         timestampElement.textContent = formatDateCET(new Date());
     }, 1000);
 }
 
-// Run timestamp update when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     updateTimestamp();
 });
