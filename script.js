@@ -1,3 +1,34 @@
+function setThemeBySystemPreference() {
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const body = document.body;
+    const themeIcon = document.getElementById('theme-icon');
+    
+    if (prefersDarkMode) {
+        body.classList.add('dark-mode');
+        themeIcon.textContent = '☀️';
+    } else {
+        body.classList.remove('dark-mode');
+        themeIcon.textContent = '🌙';
+    }
+}
+
+function listenForSystemThemeChanges() {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    darkModeMediaQuery.addEventListener('change', setThemeBySystemPreference);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateTimestamp();
+    
+    setThemeBySystemPreference();
+    listenForSystemThemeChanges();
+    
+    const typingTextElement = document.getElementById('typing-text');
+    if (typingTextElement) {
+        typeWithUsername(typingTextElement);
+    }
+});
+
 function toggleTheme() {
     const body = document.body;
     const themeIcon = document.getElementById('theme-icon');
@@ -35,6 +66,71 @@ function updateTimestamp() {
     }, 1000);
 }
 
+function typeWithUsername(element) {
+    
+    element.textContent = '';
+    
+    setTimeout(() => startTyping(), 500);
+    
+    function startTyping() {
+
+        const initialText = "Hi, I'm @bettercallmilan";
+        const finalText = "Hi, I'm Milan Jankovic";
+        let i = 0;
+        
+        function typePhase1() {
+            if (i < initialText.length) {
+                element.textContent = initialText.substring(0, i + 1);
+                i++;
+                setTimeout(typePhase1, 70);
+            } else {
+                setTimeout(() => {
+                    const deletePos = "Hi, I'm ".length;
+                    backspace(initialText, deletePos);
+                }, 1000);
+            }
+        }
+        
+        function backspace(text, targetPos) {
+            if (i > targetPos) {
+                element.textContent = text.substring(0, i - 1);
+                i--;
+                setTimeout(() => backspace(text, targetPos), 50);
+            } else {
+                setTimeout(() => {
+                    typeFinalName(targetPos);
+                }, 100);
+            }
+        }
+        
+        function typeFinalName(startPos) {
+            const nameToType = finalText.substring(startPos);
+            let j = 0;
+            
+            function typeName() {
+                if (j < nameToType.length) {
+                    element.textContent = finalText.substring(0, startPos) + nameToType.substring(0, j + 1);
+                    j++;
+                    setTimeout(typeName, 70);
+                } else {
+                    setTimeout(() => {
+                        element.classList.add('typing-done');
+                    }, 400);
+                }
+            }
+            
+            typeName();
+        }
+        
+        typePhase1();
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    
     updateTimestamp();
+    
+    const typingTextElement = document.getElementById('typing-text');
+    typeWithUsername(typingTextElement);
+    
 });

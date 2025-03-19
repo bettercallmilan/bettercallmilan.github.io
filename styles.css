@@ -181,8 +181,51 @@ nav a:hover::after {
     width: 100%;
 }
 
+/* About section */
 #about {
-    scroll-margin-top: 100px;
+    padding: 6rem 0;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.about-content {
+    text-align: left;
+}
+
+/* Typing animation */
+.typing-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+    min-height: 3.5rem;
+    display: inline-block;
+    position: relative;
+}
+
+.typing-text::after {
+    content: '|';
+    position: absolute;
+    right: -8px;
+    animation: blink 0.7s infinite;
+}
+
+.typing-done::after {
+    content: none;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Intro paragraph */
+.intro {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    opacity: 0.85;
 }
 
 /* Theme toggle button */
