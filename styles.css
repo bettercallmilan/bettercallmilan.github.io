@@ -440,12 +440,6 @@ nav a:hover::after {
     transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
 
-.skill-tag:hover {
-    background-color: var(--accent-color);
-    color: white;
-    transform: scale(1.05);
-}
-
 .skill-tags .skill-tag {
     display: inline-flex;
     align-items: center;
