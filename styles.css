@@ -220,6 +220,20 @@ nav a:hover::after {
     50% { opacity: 0; }
 }
 
+@media (max-width: 768px) {
+  .typing-text {
+    font-size: 1.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .about-content {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}
+
 /* Intro paragraph */
 .intro {
     font-size: 1.25rem;
@@ -706,4 +720,124 @@ footer {
     font-size: 0.85rem;
     margin-top: 0.5rem;
     color: var(--accent-color);
+}
+
+/* Mobile navigation */
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+
+.hamburger {
+  width: 24px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  header {
+    grid-template-columns: 1fr auto;
+  }
+  
+  .mobile-nav-toggle {
+    display: block;
+    justify-self: end;
+  }
+  
+  .theme-toggle {
+    position: absolute;
+    top: 330px;
+    right: 135px;
+    z-index: 999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transition-delay: 0.3s; 
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--bg-color);
+    padding: 80px 20px 20px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+  
+  nav.active {
+    right: 0;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-right: 50px;
+  }
+  
+  /* Show theme toggle when menu is active */
+  nav.active + .theme-toggle {
+    display: block;
+    animation: fadeIn 0.3s ease 0.25s forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  nav:not(.active) + .theme-toggle {
+    /* Hide immediately when closing */
+    transition-delay: 0s;
+    opacity: 0;
+  }
+
+  /* Transform hamburger to X when active */
+  .mobile-nav-toggle.active .hamburger span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  
+  .mobile-nav-toggle.active .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-nav-toggle.active .hamburger span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
+
+/* Footer responsiveness */
+@media (max-width: 768px) {
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .footer-info {
+    width: 100%;
+  }
+  
+  .social-links {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 }
