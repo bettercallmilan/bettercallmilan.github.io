@@ -47,7 +47,7 @@ function updateTimestamp() {
     
     function formatDateCET(date) {
         const utcDate = new Date(date);
-        const cetDate = new Date(utcDate.getTime() + (60 * 60 * 1000));
+        const cetDate = new Date(utcDate.getTime() + (60 * 60 * 2000));
         
         const year = cetDate.getUTCFullYear();
         const month = String(cetDate.getUTCMonth() + 1).padStart(2, '0');
