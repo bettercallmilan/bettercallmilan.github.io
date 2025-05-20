@@ -140,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const nav = document.querySelector('nav');
   const navLinks = document.querySelectorAll('nav a');
   
-  // Toggle mobile menu
   mobileNavToggle.addEventListener('click', function() {
     const isExpanded = this.getAttribute('aria-expanded') === 'true';
     this.setAttribute('aria-expanded', !isExpanded);
@@ -148,7 +147,6 @@ document.addEventListener('DOMContentLoaded', function() {
     nav.classList.toggle('active');
   });
   
-  // Close menu when clicking on nav links
   navLinks.forEach(link => {
     link.addEventListener('click', function() {
       mobileNavToggle.setAttribute('aria-expanded', 'false');
@@ -157,7 +155,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Close menu when clicking outside
   document.addEventListener('click', function(event) {
     if (nav.classList.contains('active') && 
         !nav.contains(event.target) && 
