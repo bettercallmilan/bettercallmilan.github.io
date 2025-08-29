@@ -29,14 +29,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const terminalContent = document.querySelector('.terminal-content');
         
         const commandResponses = {
-            'help': 'Available commands: help, ls, cat, status, clear, whoami, date, echo, exit',
+            'help': 'Available commands: help, ls, cat, clear, whoami, date, echo, exit',
             'ls': 'cv.pdf\nprojects.txt\nskills.json\neducation.md',
             'cat': 'Usage: cat [filename] - Please specify a file to display',
             'cat cv.pdf': 'Error: Binary file cannot be displayed in terminal',
-            'cat projects.txt': 'Portfolio Website\nContact Card\nTask Manager',
-            'cat skills.json': '{\n  "languages": ["Python", "C#", "JavaScript", "HTML", "CSS"],\n  "frameworks": ["ASP.NET Web-API"],\n  "tools": ["Git", "GitHub", "GitLab", "VS Code"]\n}',
+            'cat projects.txt': 'Household Manager\nPortfolio Website\nDiscord Bot\nPhotography Website',
+            'cat skills.json': '{\n  "languages": ["C#", "Python", "JavaScript", "HTML", "CSS"],\n  "frameworks": ["ASP.NET Web-API"],\n  "tools": ["Git", "GitHub", "GitLab", "VS Code"]\n}',
             'cat education.md': '# Education\n\n- Berufsfachschule BBB Baden (2023-2027)\n- Kantonsschule Baden (2023-2027)\n- Bezirksschule Brugg (2020-2023)',
-            'status': 'CV Status: 75% complete\n- Education: Complete\n- Experience: In Progress\n- Skills: Complete\n- Projects: Complete',
             'whoami': '@bettercallmilan',
             'clear': 'CLEAR',
             'exit': 'Redirecting to portfolio...'
@@ -57,11 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         setTimeout(() => {
-            const initialCommand = 'status';
+            const initialCommand = 'help';
             simulateTyping(initialCommand, function() {
                 executeCommand(initialCommand);
             });
-        }, 1000);
+        }, 500);
         
         function simulateTyping(text, callback) {
             const inputField = document.querySelector('.terminal-input');
@@ -141,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 response = commandResponses[fullCmd] || `Error: File '${args}' not found`;
             } else if (baseCmd === 'date') {
                 const now = new Date();
-                response = now.toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+                response = now.toISOString().replace('T', ' ').substring(0, 19);
             } else if (baseCmd === 'echo') {
                 response = args;
             } else if (commandResponses[baseCmd]) {
