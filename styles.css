@@ -12,12 +12,10 @@
     --tag-bg: #e1e4e8;
     --tag-text: #24292e;
     
-    /* Shadows */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
     
-    /* Transitions */
     --transition-speed: 0.3s;
 }
 
@@ -181,7 +179,7 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* About section */
+/* About */
 #about {
     padding: 6rem 0;
     min-height: 90vh;
@@ -193,7 +191,7 @@ nav a:hover::after {
     text-align: left;
 }
 
-/* Typing animation */
+/* Animation */
 .typing-text {
     font-size: 2.5rem;
     font-weight: 700;
@@ -649,7 +647,7 @@ nav a:hover::after {
 }
 
 
-/* Footer/Contact section continued */
+/* Footer/Contact section */
 footer {
     background-color: var(--secondary-bg);
     padding: 4rem 0 2rem;
@@ -793,7 +791,6 @@ footer {
     padding-right: 50px;
   }
   
-  /* Show theme toggle when menu is active */
   nav.active + .theme-toggle {
     display: block;
     animation: fadeIn 0.3s ease 0.25s forwards;
@@ -805,12 +802,10 @@ footer {
   }
 
   nav:not(.active) + .theme-toggle {
-    /* Hide immediately when closing */
     transition-delay: 0s;
     opacity: 0;
   }
 
-  /* Transform hamburger to X when active */
   .mobile-nav-toggle.active .hamburger span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
