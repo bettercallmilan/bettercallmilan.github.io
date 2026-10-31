@@ -17,33 +17,18 @@ import { RevealDirective } from '../reveal.directive';
             <a class="text-link" href="mailto:jankovic.milan@proton.me">Say hello <span>↗</span></a>
           </div>
         </div>
-        <div class="hero-art" role="img" aria-label="A colorful butterfly">
+        <div class="hero-art" role="img" aria-label="A minimal colorful butterfly" (pointermove)="moveArtwork($event)" (pointerleave)="resetArtwork()" [style.--pointer-x.px]="pointerX" [style.--pointer-y.px]="pointerY">
           <span class="butterfly-glow"></span>
+          <span class="art-cursor" aria-hidden="true"></span>
           <svg class="butterfly" viewBox="0 0 420 420" aria-hidden="true">
-            <defs>
-              <linearGradient id="wing-left" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#f6c55f"/>
-                <stop offset="1" stop-color="#e78345"/>
-              </linearGradient>
-              <linearGradient id="wing-right" x1="1" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#a7c7c2"/>
-                <stop offset="1" stop-color="#5a9a91"/>
-              </linearGradient>
-            </defs>
             <g class="butterfly-wings">
-              <path class="wing wing-left" d="M206 205C172 121 101 67 55 91c-40 21-19 86 31 119 35 23 71 30 110 26-38 12-73 37-77 74-5 44 51 59 92 25 22-18 33-46 37-79z" fill="url(#wing-left)"/>
-              <path class="wing wing-right" d="M214 205C248 121 319 67 365 91c40 21 19 86-31 119-35 23-71 30-110 26 38 12 73 37 77 74 5 44-51 59-92 25-22-18-33-46-37-79z" fill="url(#wing-right)"/>
-              <path class="wing-detail" d="M71 112c42 11 89 51 113 99M349 112c-42 11-89 51-113 99M92 299c39-16 67-35 96-76M328 299c-39-16-67-35-96-76"/>
-              <circle class="wing-spot wing-spot-left" cx="105" cy="142" r="13"/>
-              <circle class="wing-spot wing-spot-right" cx="315" cy="142" r="13"/>
+              <path class="wing wing-left" d="M205 204C171 120 102 73 61 95c-36 20-16 78 28 110 33 24 74 32 116 25-41 13-72 41-74 76-2 36 42 48 78 23 25-17 37-48 40-84z"/>
+              <path class="wing wing-right" d="M215 204C249 120 318 73 359 95c36 20 16 78-28 110-33 24-74 32-116 25 41 13 72 41 74 76 2 36-42 48-78 23-25-17-37-48-40-84z"/>
             </g>
             <g class="butterfly-body">
               <path class="antenna" d="M204 177c-14-29-29-38-48-42M216 177c14-29 29-38 48-42"/>
-              <circle class="antenna-dot" cx="156" cy="135" r="4"/>
-              <circle class="antenna-dot" cx="264" cy="135" r="4"/>
               <ellipse cx="210" cy="229" rx="13" ry="65"/>
               <circle cx="210" cy="167" r="14"/>
-              <path d="M201 214h18M199 231h22M200 249h20" />
             </g>
           </svg>
         </div>
@@ -128,10 +113,28 @@ import { RevealDirective } from '../reveal.directive';
           <a href="https://matrix.to/#/@mentalfox:envs.net" target="_blank" rel="noreferrer">Matrix ↗</a>
         </div>
       </div>
-      <div class="footer-bottom"><span>© {{ year }} Milan Jankovic</span><span>made with ❤️ in Switzerland 🇨🇭</span><a routerLink="/" fragment="top">back to top ↑</a></div>
+      <div class="footer-bottom"><span>© {{ year }} Milan Jankovic</span><span>made with ❤️ in 🇨🇭</span><a routerLink="/" fragment="top">back to top ↑</a></div>
     </footer>
   `,
 })
 export class HomeComponent {
   readonly year = new Date().getFullYear();
+  pointerX = 0;
+  pointerY = 0;
+
+  moveArtwork(event: PointerEvent): void {
+    const target = event.currentTarget;
+    if (!(target instanceof HTMLElement)) {
+      return;
+    }
+
+    const bounds = target.getBoundingClientRect();
+    this.pointerX = (event.clientX - (bounds.left + bounds.width / 2)) * 0.035;
+    this.pointerY = (event.clientY - (bounds.top + bounds.height / 2)) * 0.035;
+  }
+
+  resetArtwork(): void {
+    this.pointerX = 0;
+    this.pointerY = 0;
+  }
 }

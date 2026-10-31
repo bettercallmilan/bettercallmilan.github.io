@@ -24,7 +24,7 @@ import { RevealDirective } from '../reveal.directive';
         <p>I’m keeping this as an ongoing note rather than a definitive guide. There are still settings to understand, objects to design, and plenty of failed prints to learn from.</p>
       </article>
     </main>
-    <footer class="site-footer page-width compact-footer"><div class="footer-bottom"><span>© {{ year }} Milan Jankovic</span><span>made with ❤️ in Switzerland 🇨🇭</span><a routerLink="/">home ↗</a></div></footer>
+    <footer class="site-footer page-width compact-footer"><div class="footer-bottom"><span>© {{ year }} Milan Jankovic</span><span>made with ❤️ in 🇨🇭</span><a routerLink="/">home ↗</a></div></footer>
   `,
 })
 export class ArticleComponent {

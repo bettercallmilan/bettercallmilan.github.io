@@ -24,7 +24,7 @@ import { RevealDirective } from '../reveal.directive';
         </a>
       </section>
     </main>
-    <footer class="site-footer page-width compact-footer"><div class="footer-bottom"><span>© {{ year }} Milan Jankovic</span><span>made with ❤️ in Switzerland 🇨🇭</span><a routerLink="/">home ↗</a></div></footer>
+    <footer class="site-footer page-width compact-footer"><div class="footer-bottom"><span>© {{ year }} Milan Jankovic</span><span>made with ❤️ in 🇨🇭</span><a routerLink="/">home ↗</a></div></footer>
   `,
 })
 export class BlogComponent {
