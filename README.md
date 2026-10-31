@@ -1,6 +1,6 @@
 # 📰 bettercallmilan.github.io
 
-Welcome to my personal blog website, [bettercallmilan.github.io](https://bettercallmilan.github.io). This repository contains the code for my blog where I share my thoughts, projects, and more.
+Welcome to my personal website, [bettercallmilan.github.io](https://bettercallmilan.github.io). The site is built as a standalone Angular application and contains my portfolio, blog, and project notes.
 
 ## Table of Contents
 - [About](#about)
@@ -13,17 +13,35 @@ Welcome to my personal blog website, [bettercallmilan.github.io](https://betterc
 This website serves as my personal blog where I publish articles about various topics including my projects, thoughts, and experiences. It is a platform for me to share my journey and connect with others.
 
 ## Features
-- Blog posts about projects and personal thoughts
-- Responsive design for optimal viewing on different devices
-- Easy navigation through the website
+- Angular standalone components with client-side routing
+- Portfolio, blog listing, and 3D-printer article routes
+- Responsive design with reveal-on-scroll animations
+- Hash-based routing for static hosting such as GitHub Pages
 
 ## Technologies Used
-- **HTML**: Structure of the website
-- **CSS**: Styling of the website
-- **JavaScript**: Interactive elements on the website
+- **Angular**: Application structure and routing
+- **TypeScript**: Components and browser interactions
+- **CSS**: Styling and responsive layout
 
 ## Usage
-To view the blog, simply visit [bettercallmilan.github.io](https://bettercallmilan.github.io) in your web browser.
+Install dependencies and start the local development server:
+
+```bash
+npm install
+npm start
+```
+
+Create a production build with `npm run build`. The generated static files are written to `dist/bettercallmilan/`.
+
+### Deploying to GitHub Pages
+
+The repository includes a GitHub Actions workflow in `.github/workflows/deploy-pages.yml`.
+
+1. Push the repository to GitHub.
+2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
+3. Push to `main`, `master`, or `new-design`, or run the workflow manually from the **Actions** tab.
+
+The site will be available at [bettercallmilan.github.io](https://bettercallmilan.github.io).
 
 ## License
 This project is open-source and available under the [MIT License](LICENSE).
