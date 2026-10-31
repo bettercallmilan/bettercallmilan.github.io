@@ -17,11 +17,35 @@ import { RevealDirective } from '../reveal.directive';
             <a class="text-link" href="mailto:jankovic.milan@proton.me">Say hello <span>↗</span></a>
           </div>
         </div>
-        <div class="hero-art" aria-label="A minimal geometric composition">
-          <span class="shape shape-circle"></span>
-          <span class="shape shape-square"></span>
-          <span class="shape shape-line"></span>
-          <span class="shape shape-dot"></span>
+        <div class="hero-art" role="img" aria-label="A colorful butterfly">
+          <span class="butterfly-glow"></span>
+          <svg class="butterfly" viewBox="0 0 420 420" aria-hidden="true">
+            <defs>
+              <linearGradient id="wing-left" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f6c55f"/>
+                <stop offset="1" stop-color="#e78345"/>
+              </linearGradient>
+              <linearGradient id="wing-right" x1="1" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#a7c7c2"/>
+                <stop offset="1" stop-color="#5a9a91"/>
+              </linearGradient>
+            </defs>
+            <g class="butterfly-wings">
+              <path class="wing wing-left" d="M206 205C172 121 101 67 55 91c-40 21-19 86 31 119 35 23 71 30 110 26-38 12-73 37-77 74-5 44 51 59 92 25 22-18 33-46 37-79z" fill="url(#wing-left)"/>
+              <path class="wing wing-right" d="M214 205C248 121 319 67 365 91c40 21 19 86-31 119-35 23-71 30-110 26 38 12 73 37 77 74 5 44-51 59-92 25-22-18-33-46-37-79z" fill="url(#wing-right)"/>
+              <path class="wing-detail" d="M71 112c42 11 89 51 113 99M349 112c-42 11-89 51-113 99M92 299c39-16 67-35 96-76M328 299c-39-16-67-35-96-76"/>
+              <circle class="wing-spot wing-spot-left" cx="105" cy="142" r="13"/>
+              <circle class="wing-spot wing-spot-right" cx="315" cy="142" r="13"/>
+            </g>
+            <g class="butterfly-body">
+              <path class="antenna" d="M204 177c-14-29-29-38-48-42M216 177c14-29 29-38 48-42"/>
+              <circle class="antenna-dot" cx="156" cy="135" r="4"/>
+              <circle class="antenna-dot" cx="264" cy="135" r="4"/>
+              <ellipse cx="210" cy="229" rx="13" ry="65"/>
+              <circle cx="210" cy="167" r="14"/>
+              <path d="M201 214h18M199 231h22M200 249h20" />
+            </g>
+          </svg>
         </div>
       </section>
 
