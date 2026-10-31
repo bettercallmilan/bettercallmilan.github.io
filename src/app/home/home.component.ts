@@ -110,7 +110,7 @@ import { RevealDirective } from '../reveal.directive';
           <a href="https://github.com/bettercallmilan" target="_blank" rel="noreferrer">GitHub ↗</a>
           <a href="https://www.linkedin.com/in/milan--jankovic/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
           <a href="https://www.instagram.com/milan.sag/" target="_blank" rel="noreferrer">Instagram ↗</a>
-          <a href="https://matrix.to/#/@mentalfox:envs.net" target="_blank" rel="noreferrer">Matrix ↗</a>
+          <a href="https://matrix.to/#/@milan:hilfikers.com" target="_blank" rel="noreferrer">Matrix ↗</a>
         </div>
       </div>
       <div class="footer-bottom"><span>© {{ year }} Milan Jankovic</span><span>made with ❤️ in 🇨🇭</span><a routerLink="/" fragment="top">back to top ↑</a></div>
