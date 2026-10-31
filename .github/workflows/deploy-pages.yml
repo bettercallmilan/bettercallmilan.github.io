@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-      - master
-      - new-design
   workflow_dispatch:
 
 permissions:
