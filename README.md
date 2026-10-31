@@ -39,9 +39,11 @@ The repository includes a GitHub Actions workflow in `.github/workflows/deploy-p
 
 1. Push the repository to GitHub.
 2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-3. Push to `main`, `master`, or `new-design`, or run the workflow manually from the **Actions** tab.
+3. Push to `main`, or run the workflow manually from the **Actions** tab.
 
 The site will be available at [bettercallmilan.github.io](https://bettercallmilan.github.io).
+
+The application uses clean URLs such as `/blog` and `/3d-printer`. A generated `404.html` fallback keeps those routes working when GitHub Pages serves a direct request.
 
 ## License
 This project is open-source and available under the [MIT License](LICENSE).
