@@ -22,10 +22,19 @@
                 "glob": "**/*",
                 "input": "favicon",
                 "output": "favicon"
+              },
+              {
+                "glob": "rss.xml",
+                "input": "public",
+                "output": "/"
               }
             ],
             "styles": [
-              "styles.css"
+              "node_modules/@fontsource-variable/fraunces/full.css",
+              "node_modules/@fontsource-variable/fraunces/full-italic.css",
+              "node_modules/@fontsource-variable/instrument-sans/index.css",
+              "node_modules/@fontsource-variable/jetbrains-mono/index.css",
+              "src/styles.css"
             ]
           },
           "configurations": {

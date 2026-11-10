@@ -13,10 +13,11 @@ Welcome to my personal website, [bettercallmilan.github.io](https://bettercallmi
 This website serves as my personal blog where I publish articles about various topics including my projects, thoughts, and experiences. It is a platform for me to share my journey and connect with others.
 
 ## Features
-- Angular standalone components with client-side routing
-- Portfolio, blog listing, and 3D-printer article routes
-- Responsive design with reveal-on-scroll animations
-- Hash-based routing for static hosting such as GitHub Pages
+- A single page built from Angular standalone components
+- One-screen card board on desktop that stacks on tablet and phone
+- The 3D-printer note opens as a side sheet and keeps its own URL (`/3d-printer`)
+- Self-hosted variable fonts (Fraunces, Instrument Sans, JetBrains Mono)
+- Clean URLs with a `404.html` fallback for GitHub Pages
 
 ## Technologies Used
 - **Angular**: Application structure and routing
@@ -43,7 +44,7 @@ The repository includes a GitHub Actions workflow in `.github/workflows/deploy-p
 
 The site will be available at [bettercallmilan.github.io](https://bettercallmilan.github.io).
 
-The application uses clean URLs such as `/blog` and `/3d-printer`. A generated `404.html` fallback keeps those routes working when GitHub Pages serves a direct request.
+The note uses the clean URL `/3d-printer`. A generated `404.html` fallback keeps those routes working when GitHub Pages serves a direct request.
 
 ## License
 This project is open-source and available under the [MIT License](LICENSE).

@@ -1,140 +1,154 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { RevealDirective } from '../reveal.directive';
+import { posts } from '../blog/posts';
+import { ButterflyComponent } from '../butterfly/butterfly.component';
+import { IconComponent } from '../ui/icon.component';
+import { PointerGlowDirective } from '../ui/pointer-glow.directive';
+import { contacts, projects, skills } from './content';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RevealDirective, RouterLink],
+  imports: [ButterflyComponent, IconComponent, PointerGlowDirective, RouterLink],
   template: `
-    <main>
-      <section class="hero page-width">
-        <div class="hero-copy">
-          <h1>Make room<br><em>for better ideas.</em></h1>
-          <p class="hero-intro">I’m Milan, a software engineer intern at VZ VermögensZentrum in Zürich, building calm, useful things with Fluent UI and C#.</p>
-          <div class="hero-actions">
-            <a class="button button-dark" routerLink="/" fragment="work">See my work <span>↘</span></a>
-            <a class="text-link" href="mailto:jankovic.milan@proton.me">Say hello <span>↗</span></a>
-          </div>
+    <main class="bento" appPointerGlow>
+      <section class="card intro" style="--i: 0">
+        <div class="intro-top">
+          <p class="wordmark"><span class="wordmark-mark" aria-hidden="true"></span>milan jankovic</p>
         </div>
-        <div class="hero-art" role="img" aria-label="A minimal colorful butterfly" (pointermove)="moveArtwork($event)" (pointerleave)="resetArtwork()" [style.--pointer-x.px]="pointerX" [style.--pointer-y.px]="pointerY">
-          <span class="butterfly-glow"></span>
-          <span class="art-cursor" aria-hidden="true"></span>
-          <svg class="butterfly" viewBox="0 0 420 420" aria-hidden="true">
-            <g class="butterfly-wings">
-              <path class="wing wing-left" d="M205 204C171 120 102 73 61 95c-36 20-16 78 28 110 33 24 74 32 116 25-41 13-72 41-74 76-2 36 42 48 78 23 25-17 37-48 40-84z"/>
-              <path class="wing wing-right" d="M215 204C249 120 318 73 359 95c36 20 16 78-28 110-33 24-74 32-116 25 41 13 72 41 74 76 2 36-42 48-78 23-25-17-37-48-40-84z"/>
-            </g>
-            <g class="butterfly-body">
-              <path class="antenna" d="M204 177c-14-29-29-38-48-42M216 177c14-29 29-38 48-42"/>
-              <ellipse cx="210" cy="229" rx="13" ry="65"/>
-              <circle cx="210" cy="167" r="14"/>
-            </g>
-          </svg>
-        </div>
-      </section>
 
-      <section class="page-width section reveal" id="work" appReveal>
-        <div class="section-heading">
-          <p class="eyebrow">01 / currently at VZ</p>
-          <p class="section-note">A software engineering internship in Zürich.</p>
-        </div>
-        <div class="work-grid">
-          <a class="work-card work-card-featured" href="https://www.vzch.com/" target="_blank" rel="noreferrer">
-            <div class="card-image card-image-orange"><span>01</span><strong>VZ<br>team</strong><small>software engineering / Zürich</small></div>
-            <div class="card-meta"><span>VZ VermögensZentrum</span><span>intern ↗</span></div>
-          </a>
-          <a class="work-card" href="https://developer.microsoft.com/en-us/fluentui" target="_blank" rel="noreferrer">
-            <div class="card-image card-image-blue"><span>02</span><strong>front<br>end</strong><small>Fluent UI / accessible interfaces</small></div>
-            <div class="card-meta"><span>Fluent UI</span><span>what I do ↗</span></div>
-          </a>
-          <a class="work-card" href="https://dotnet.microsoft.com/en-us/languages/csharp" target="_blank" rel="noreferrer">
-            <div class="card-image card-image-yellow"><span>03</span><strong>back<br>end</strong><small>C# / APIs / application logic</small></div>
-            <div class="card-meta"><span>C# &amp; .NET</span><span>what I do ↗</span></div>
-          </a>
-        </div>
-        <div class="work-summary">
-          <p class="eyebrow">the short version</p>
-          <p>I contribute to internal software at VZ: shaping interfaces with Fluent UI, implementing application logic and APIs in C#, and learning how thoughtful software supports real financial work.</p>
-        </div>
-      </section>
-
-      <section class="about-section reveal" appReveal>
-        <div class="page-width about-grid">
-          <p class="eyebrow">02 / a little about me</p>
-          <div>
-            <p class="about-lead">Software should feel as thoughtful as the people using it.</p>
-            <p class="about-body">I’m currently interning as a software engineer at VZ VermögensZentrum in Zürich. My day-to-day stack is Fluent UI on the front end and C# on the backend, with plenty of curiosity in between.</p>
-            <a class="text-link" routerLink="/blog">Read the blog <span>↗</span></a>
+        <div class="intro-body">
+          <h1 class="headline">
+            <span class="line"><span>Hey,</span></span>
+            <span class="line"><span><em>I'm Milan.</em></span></span>
+          </h1>
+          <p class="intro-text">
+            A software engineer intern at VZ VermögensZentrum in Zürich. I'm mainly learning and working
+            with C# and Angular, and I've also worked a bit with Fluent UI.
+          </p>
+          <div class="intro-actions">
+            <a class="text-link go" routerLink="/blog">Blog <b aria-hidden="true">→</b></a>
+            <a class="text-link" href="https://github.com/bettercallmilan" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </section>
 
-      <section class="page-width experience-section reveal" appReveal>
-        <div class="section-heading">
-          <p class="eyebrow">03 / experience</p>
-          <p class="section-note">A short version of what I’m up to.</p>
-        </div>
-        <div class="experience-row">
-          <span class="experience-date">2025—now</span>
-          <div><h2>Software Engineer Intern</h2><p>VZ VermögensZentrum · Zürich</p></div>
-          <span class="experience-detail">Fluent UI / C#</span>
-        </div>
-        <div class="experience-row">
-          <span class="experience-date">always</span>
-          <div><h2>Learning in public</h2><p>Small experiments, useful notes, better questions.</p></div>
-          <span class="experience-detail">web / systems</span>
-        </div>
+      <section class="card bfly" style="--i: 1">
+        <app-butterfly />
       </section>
 
-      <section class="skills-section reveal" appReveal>
-        <div class="page-width skills-grid">
-          <p class="eyebrow">04 / things I know</p>
-          <div class="skills-content">
-            <p class="skills-lead">A practical toolkit, growing every day.</p>
-            <div class="skill-groups">
-              <div><span class="skill-label">languages</span><p>C# · Python · JavaScript · HTML · CSS · SQL · PowerShell</p></div>
-              <div><span class="skill-label">frameworks &amp; tech</span><p>Fluent UI · .NET · ASP.NET Web API · AWS · databases · TCP/IP</p></div>
-              <div><span class="skill-label">ways of working</span><p>Git · GitHub · GitLab · VS Code · debugging · code coverage · UX · Scrum</p></div>
-            </div>
-          </div>
-        </div>
+      <section class="card about" style="--i: 2">
+        <span class="about-mark" aria-hidden="true"></span>
+        <p class="label">about me</p>
+        <ul class="about-list">
+          <li><app-icon name="racket" />former badminton player</li>
+          <li><app-icon name="tools" />love crafting and repairing things</li>
+          <li><app-icon name="camera" />occasional camera and drone photographer</li>
+          <li><app-icon name="printer" />recently got into 3d printing</li>
+          <li><app-icon name="plant" />growing two ficus bonsai and seven orchids</li>
+        </ul>
+      </section>
+
+      <section class="card exp" style="--i: 3">
+        <p class="label">experience</p>
+        <ul class="rows exp-list">
+          <li>
+            <span class="label dim">2026—now</span>
+            <div><h2>VZ VermögensZentrum</h2><p>software engineer intern</p></div>
+            <span class="label tag">work</span>
+          </li>
+          <li>
+            <span class="label dim">2023—2027</span>
+            <div><h2>Berufsfachschule BBB</h2><p>computer science</p></div>
+            <span class="label tag">education</span>
+          </li>
+          <li>
+            <span class="label dim">2023—2027</span>
+            <div><h2>Kantonsschule</h2><p>economics, law, accounting</p></div>
+            <span class="label tag">education</span>
+          </li>
+        </ul>
+      </section>
+
+      <div class="plates" style="--i: 4">
+        <a class="tile tile-vz" href="https://www.vzch.com/" target="_blank" rel="noreferrer">
+          <span class="art art-orbit" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="label go">currently at <b aria-hidden="true">↗</b></span>
+          <strong>VZ</strong>
+        </a>
+        <a class="tile tile-fe" href="https://angular.dev/" target="_blank" rel="noreferrer">
+          <span class="art art-window" aria-hidden="true"><i></i><b></b><b></b><u></u></span>
+          <span class="label">front end</span>
+          <strong>Angular</strong>
+        </a>
+        <a class="tile tile-be" href="https://dotnet.microsoft.com/en-us/languages/csharp" target="_blank" rel="noreferrer">
+          <span class="art art-braces" aria-hidden="true">&#123;&#125;</span>
+          <span class="label">back end</span>
+          <strong>C#</strong>
+        </a>
+      </div>
+
+      <section class="card projects" style="--i: 5">
+        <p class="label">projects</p>
+        <ul class="rows link-rows">
+          @for (project of projects; track project.name) {
+            <li>
+              <a [href]="project.url" target="_blank" rel="noreferrer">
+                <strong>{{ project.name }}</strong>
+                <span>{{ project.note }}</span>
+                <b aria-hidden="true">↗</b>
+              </a>
+            </li>
+          }
+        </ul>
+      </section>
+
+      <section class="card stack" style="--i: 6">
+        <p class="label">skills</p>
+        <ul class="skill-list">
+          @for (skill of skills; track skill.title) {
+            <li>
+              <app-icon [name]="skill.icon" />
+              <p><b>{{ skill.title }}</b><span>{{ skill.items }}</span></p>
+            </li>
+          }
+        </ul>
+      </section>
+
+      <a class="card note" style="--i: 7" [routerLink]="['/blog', post.slug]">
+        <span class="label note-top"><span>from the blog</span><span class="go">read <b aria-hidden="true">→</b></span></span>
+        <strong>{{ post.title }}</strong>
+        <span class="layer-stack" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </a>
+
+      <section class="card contact" style="--i: 9" id="contact">
+        <p class="label">contact</p>
+        <a class="contact-email" href="mailto:jankovic.milan@proton.me">jankovic.milan&#64;proton.me</a>
+        <ul class="contact-icons">
+          @for (contact of contacts; track contact.label) {
+            <li>
+              <a [href]="contact.url" [attr.target]="contact.icon === 'mail' ? null : '_blank'" rel="noreferrer" [attr.aria-label]="contact.label" [title]="contact.label">
+                <app-icon [name]="contact.icon" />
+              </a>
+            </li>
+          }
+        </ul>
+        <p class="label fine"><span>© {{ year }} Milan Jankovic</span><span>made with ❤️ & 🧉 in 🇨🇭</span></p>
       </section>
     </main>
 
-    <footer class="site-footer page-width" id="contact">
-      <div>
-        <p class="eyebrow">05 / let’s talk</p>
-        <a class="footer-email" href="mailto:jankovic.milan@proton.me">jankovic.milan@proton.me <span>↗</span></a>
-        <div class="social-links">
-          <a href="https://github.com/bettercallmilan" target="_blank" rel="noreferrer">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/milan--jankovic/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-          <a href="https://www.instagram.com/milan.sag/" target="_blank" rel="noreferrer">Instagram ↗</a>
-          <a href="https://matrix.to/#/@milan:hilfikers.com" target="_blank" rel="noreferrer">Matrix ↗</a>
-        </div>
-      </div>
-      <div class="footer-bottom"><span>© {{ year }} Milan Jankovic</span><span>made with ❤️ in 🇨🇭</span><a routerLink="/" fragment="top">back to top ↑</a></div>
-    </footer>
+    <button class="to-top to-top-home label" type="button" (click)="toTop()">back to top ↑</button>
   `,
 })
 export class HomeComponent {
   readonly year = new Date().getFullYear();
-  pointerX = 0;
-  pointerY = 0;
+  readonly post = posts[0];
+  readonly projects = projects;
+  readonly skills = skills;
+  readonly contacts = contacts;
 
-  moveArtwork(event: PointerEvent): void {
-    const target = event.currentTarget;
-    if (!(target instanceof HTMLElement)) {
-      return;
-    }
-
-    const bounds = target.getBoundingClientRect();
-    this.pointerX = (event.clientX - (bounds.left + bounds.width / 2)) * 0.035;
-    this.pointerY = (event.clientY - (bounds.top + bounds.height / 2)) * 0.035;
-  }
-
-  resetArtwork(): void {
-    this.pointerX = 0;
-    this.pointerY = 0;
+  toTop(): void {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
   }
 }
