@@ -11,10 +11,10 @@ export interface Post {
 export const posts: Post[] = [
   {
     slug: '3d-printer',
-    kicker: 'making / 5 min read',
+    kicker: 'making / 3 min read',
     title: 'Learning by making: my first 3D printer',
     date: '27.10.2026',
     summary:
-      'A first note about getting a 3D printer, figuring out the settings, and learning why making something rarely starts with getting it right.',
+      'Choosing a 3D printer, hitting a clog error 1.6% into the very first print, sending it back, and finally printing a Benchy on the replacement.',
   },
 ];

@@ -976,6 +976,89 @@ a.go-back:hover b {
   line-height: 1.12;
 }
 
+.article ul {
+  display: grid;
+  gap: .5em;
+  margin-block: 1.2em;
+  padding-left: 1.2em;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  list-style: square;
+}
+
+.article li::marker {
+  color: var(--orange);
+}
+
+/* Links in running text: underlined, orange on hover. */
+.article :is(p, li) a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--orange);
+  text-underline-offset: .18em;
+  transition: color .25s ease;
+}
+
+.article :is(p, li) a:hover {
+  color: var(--orange);
+}
+
+.article .sources {
+  gap: .35em;
+  font-size: 1rem;
+}
+
+.article .sources .label {
+  margin-left: .4rem;
+  opacity: .6;
+}
+
+.article figure {
+  margin-block: 2rem;
+}
+
+/* Line drawings: one stroke weight, labels in the mono face. */
+.sketch {
+  display: block;
+  width: 100%;
+  height: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sketch text {
+  fill: currentColor;
+  stroke: none;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.sketch .sketch-paper {
+  fill: var(--card);
+}
+
+.sketch .sketch-fill {
+  fill: var(--blue);
+}
+
+.sketch text.sketch-hot,
+.sketch .sketch-hot-fill {
+  fill: var(--orange);
+  font-weight: 700;
+}
+
+.sketch .sketch-hot-fill {
+  stroke: none;
+}
+
+.article figcaption {
+  margin-top: .6rem;
+  opacity: .7;
+}
+
 .article h2 {
   margin-top: 2em;
   margin-bottom: .5em;
