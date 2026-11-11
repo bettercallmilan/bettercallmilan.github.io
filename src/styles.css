@@ -111,7 +111,6 @@ button {
   opacity: .7;
 }
 
-/* Display type */
 .headline,
 .tile strong,
 .note strong,
@@ -549,7 +548,6 @@ a.go-back:hover b {
   z-index: -1;
 }
 
-/* orbit */
 .art-orbit {
   inset: 0;
 }
@@ -585,7 +583,6 @@ a.go-back:hover b {
 .tile-vz:hover .art-orbit i:nth-child(1) { transform: translate(-5%, 6%); }
 .tile-vz:hover .art-orbit i:nth-child(3) { transform: translate(-40%, 50%); }
 
-/* a small window that straightens up and switches on */
 .art-window {
   top: .55rem;
   right: .65rem;
@@ -641,7 +638,6 @@ a.go-back:hover b {
   background: var(--orange);
 }
 
-/* braces */
 .art-braces {
   top: .55rem;
   right: .8rem;
@@ -882,7 +878,6 @@ a.go-back:hover b {
   transform-origin: 210px 215px;
 }
 
-/* At rest the wings open and close slowly. */
 .shy-butterfly.is-perched .sb-wing {
   animation: perch 3.8s ease-in-out infinite;
 }
@@ -1047,7 +1042,6 @@ a.go-back:hover b {
   color: var(--orange);
 }
 
-/* Links in running text: underlined, orange on hover. */
 .article :is(p, li) a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -1074,7 +1068,6 @@ a.go-back:hover b {
   margin-block: 2rem;
 }
 
-/* Line drawings: one stroke weight, labels in the mono face. */
 .sketch {
   display: block;
   width: 100%;

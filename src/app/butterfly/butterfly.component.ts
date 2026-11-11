@@ -54,7 +54,6 @@ function render(scale: number): string {
   const inBody = (x: number, y: number): boolean =>
     ((x - AXIS) / 10) ** 2 + ((y - 222) / 62) ** 2 < 1 || near(x, y, AXIS, 160, 12);
 
-  /** Fill character for a point inside a wing. */
   const fill = (x: number, y: number): string => {
     const lx = toLeft(x);
     if (inFore(x, y)) {

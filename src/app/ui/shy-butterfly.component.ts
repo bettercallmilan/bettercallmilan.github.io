@@ -2,9 +2,7 @@ import { Component, DestroyRef, ElementRef, NgZone, inject } from '@angular/core
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 
-/** How close the pointer may come before the butterfly takes off, in pixels. */
 const SHY_RADIUS = 85;
-/** A new perch should be at least this far from the pointer. */
 const SAFE_DISTANCE = 260;
 /** Space the butterfly needs above a card edge so it is fully visible. */
 const HEADROOM = 48;
@@ -103,7 +101,6 @@ export class ShyButterflyComponent {
     });
   }
 
-  /** A random spot on the top edge of a card that is on screen and away from the pointer. */
   private pickPerch(): Point | null {
     const cards = Array.from(document.querySelectorAll<HTMLElement>('.card, .tile'))
       .map((card) => card.getBoundingClientRect())
@@ -146,7 +143,6 @@ export class ShyButterflyComponent {
     this.host.style.transform = `translate3d(${point.x.toFixed(1)}px, ${point.y.toFixed(1)}px, 0) rotate(${tilt.toFixed(1)}deg)`;
   }
 
-  /** Flies along an arc: up and away first, then down onto the new perch. */
   private flyTo(target: Point | null): void {
     if (!target) {
       return;

@@ -1,7 +1,5 @@
 import { IconName } from '../ui/icon.component';
 
-/** Everything on the home board that is a plain list lives here, so it is easy to edit. */
-
 export const projects = [
   { name: 'Purbank', note: 'Group project: Secure E-Banking', url: 'https://purbank.ch' },
   { name: 'EOTIR', note: 'Immersive text-based adventure game', url: 'https://bettercallmilan.github.io/EOTIR/' },

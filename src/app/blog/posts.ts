@@ -1,5 +1,4 @@
 export interface Post {
-  /** Route below /blog. */
   slug: string;
   kicker: string;
   title: string;

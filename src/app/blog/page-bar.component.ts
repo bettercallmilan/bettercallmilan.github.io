@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
-/** The slim header card shared by the blog pages. */
 @Component({
   selector: 'app-page-bar',
   standalone: true,

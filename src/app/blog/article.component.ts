@@ -83,12 +83,10 @@ import { PageBarComponent } from "./page-bar.component";
             role="img"
             aria-label="Line drawing of the printer’s touchscreen showing error code 11518: filament clogging detected, with Resume and Stop buttons. The print is at 1.6%."
           >
-            <!-- the display unit -->
             <rect x="40" y="20" width="640" height="360" rx="26" />
             <rect x="92" y="62" width="536" height="262" rx="6" />
             <path d="M150 380v20h420v-20M96 414h528" />
 
-            <!-- side menu -->
             <rect
               class="sketch-fill"
               x="108"
@@ -104,18 +102,15 @@ import { PageBarComponent } from "./page-bar.component";
             <circle cx="126" cy="266" r="9" />
             <circle cx="126" cy="266" r="3" />
 
-            <!-- top bar -->
             <text x="360" y="92" text-anchor="middle">
               Shark_PLA_0.2_47m3s.gcode
             </text>
             <path d="M566 84h10v8h-10zM584 84h8v8h-8zM600 84h8v8h-8z" />
 
-            <!-- controls half hidden behind the dialog -->
             <rect x="548" y="122" width="64" height="26" rx="5" />
             <rect x="548" y="160" width="64" height="26" rx="5" />
             <rect x="548" y="198" width="64" height="26" rx="5" />
 
-            <!-- the error dialog -->
             <rect
               class="sketch-paper"
               x="180"
@@ -138,7 +133,6 @@ import { PageBarComponent } from "./page-bar.component";
             <text x="271" y="274" text-anchor="middle">Resume</text>
             <text x="453" y="274" text-anchor="middle">Stop</text>
 
-            <!-- progress row -->
             <text class="sketch-hot" x="196" y="312">1.6%</text>
             <text x="256" y="312">1/76</text>
             <text x="306" y="312">46m19s</text>
