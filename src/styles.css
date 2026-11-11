@@ -846,6 +846,63 @@ a.go-back:hover b {
   transform: translateY(-.2rem);
 }
 
+/* ---------- The shy butterfly that perches on cards ---------- */
+
+.shy-butterfly {
+  --flap: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 2.1rem;
+  /* The body's lower end sits on the card edge. */
+  margin: -1.45rem 0 0 -1.05rem;
+  opacity: 0;
+  transition: opacity .6s ease;
+  pointer-events: none;
+}
+
+.shy-butterfly.is-on {
+  opacity: 1;
+}
+
+.shy-butterfly svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.sb-wing {
+  fill: var(--orange);
+  stroke: var(--forest);
+  stroke-width: 9;
+  stroke-linejoin: round;
+  transform: scaleX(var(--flap));
+  transform-origin: 210px 215px;
+}
+
+/* At rest the wings open and close slowly. */
+.shy-butterfly.is-perched .sb-wing {
+  animation: perch 3.8s ease-in-out infinite;
+}
+
+.sb-body {
+  fill: var(--forest);
+}
+
+.sb-body path {
+  fill: none;
+  stroke: var(--forest);
+  stroke-width: 9;
+  stroke-linecap: round;
+}
+
+@keyframes perch {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(.5); }
+}
+
 /* ---------- Back to top ---------- */
 
 .to-top {
@@ -1216,7 +1273,8 @@ a.go-back:hover b {
     transition-duration: .01ms !important;
   }
 
-  .layer-stack i {
+  .layer-stack i,
+  .shy-butterfly.is-perched .sb-wing {
     animation: none;
   }
 
